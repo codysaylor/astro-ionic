@@ -1,0 +1,24 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import '@ionic/core/css/palettes/dark.always.css'
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <ViewTransitions />
+  <script>
+    import { initialize } from "@ionic/core/components"
+    import { defineCustomElement } from "@ionic/core/components/ion-input.js"
+    document.addEventListener("astro:page-load", () => {
+      initialize();
+      defineCustomElement();
+    })
+  </script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+<body>
+  <slot />
+</body>
+</html>
